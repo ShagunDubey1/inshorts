@@ -27,16 +27,18 @@ function Home() {
   if(isError) return <p>Error</p>
 
   return (
-    <div className=" flex min-h-screen bg-gray-100">
-      {/* <Header /> */}
-      <Sidebar setIsOpen={setIsOpen} isOpen={isOpen} setCategory={setCategory}/>
-      <div className="container mx-auto py-8">
-        {data?.data?.articles.map((news, index) => (
-          <NewsCard key={index} news={news} />
-        ))}
+    <>
+      <Header setIsOpen={setIsOpen} isOpen={isOpen}/>
+      <div className=" flex min-h-screen bg-gray-100">
+        <Sidebar setIsOpen={setIsOpen} isOpen={isOpen} setCategory={setCategory}/>
+        <div className="container mx-auto py-8">
+          {data?.data?.articles.map((news, index) => (
+            <NewsCard key={index} news={news} />
+          ))}
+        </div>
+        {/* <Footer /> */}
       </div>
-      {/* <Footer /> */}
-    </div>
+    </>
   )
 }
 
