@@ -1,4 +1,5 @@
-function Header({ setIsOpen, isOpen, setCategory }) {
+/* eslint-disable react/prop-types */
+function Header({ setIsOpen, isOpen }) {
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
@@ -9,7 +10,7 @@ function Header({ setIsOpen, isOpen, setCategory }) {
         <button onClick={toggleSidebar} className="text-2xl text-black">
           &#9776;
         </button>
-        <h1 className="text-2xl font-bold text-gray-800">inshorts</h1>
+        <h1 className="text-2xl font-bold text-red-600">inshorts</h1>
         <button className="text-lg bg-transparent focus:outline-none"></button>
       </div>
     </header>

@@ -24,7 +24,7 @@ const Sidebar = ({ setIsOpen, isOpen, setCategory }) => {
     <div className="flex">
       <div
         className={`fixed top-0 left-0 h-full bg-gray-800 text-white transition-transform duration-300 z-10 ${
-          isOpen ? 'translate-x-0 hidden' : '-translate-x-full fixed'
+          isOpen ? 'translate-x-0 fixed ' : '-translate-x-full hidden'
         } md:translate-x-0 md:w-60 w-72`}
       >
         <div className="flex justify-between p-4">
