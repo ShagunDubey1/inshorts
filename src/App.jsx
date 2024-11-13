@@ -1,12 +1,9 @@
+import PublicRoutes from "./routes"
 
 function App() {
 
   return (
-    <>
-  <div>
-    heee
-  </div>
-    </>
+  <PublicRoutes />
   )
 }
 
