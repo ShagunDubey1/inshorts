@@ -5,6 +5,10 @@ function PublicRoutes() {
   return (
     <Routes>
         <Route
+          path={'/:category'}
+          element={<Home />}
+        />
+        <Route
           path={'/'}
           element={<Home />}
           index
