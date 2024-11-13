@@ -27,10 +27,6 @@ function Home() {
     setSelectedNews(news);
   };
 
-  const handleNewsClosed = () => {
-    setSelectedNews(null);
-  };
-
   if (isLoading) return <p>Loading..</p>;
 
   if (isError) return <p>Error</p>;
@@ -65,7 +61,7 @@ function Home() {
                     </h2>
 
                     <CgCloseR
-                      onClick={handleNewsClosed}
+                      onClick={() => setSelectedNews(null)}
                       className=" text-2xl text-gray-600 cursor-pointer hover:text-black hover:shadow-lg"
                     />
                   </div>
