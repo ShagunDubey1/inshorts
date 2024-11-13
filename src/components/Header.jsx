@@ -5,7 +5,7 @@ function Header({ setIsOpen, isOpen }) {
   };
 
   return (
-    <header className="bg-white shadow p-4">
+    <header className="bg-white shadow-lg p-4">
       <div className="container mx-auto flex justify-between items-center">
         <button onClick={toggleSidebar} className="text-2xl text-black">
           &#9776; Menu

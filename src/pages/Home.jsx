@@ -45,9 +45,15 @@ function Home() {
         <div className="container mx-auto ">
           <div className="flex flex-col md:flex-row px-6">
             {/* News list */}
-            <div className={` w-full py-7 ${selectedNews ? 'md:w-[60%]' : ''}`}>
+            <div
+              className={` w-full transition-all ease-in-out duration-500  py-7 ${selectedNews ? 'md:w-[60%]' : ''}`}
+            >
               {data?.data?.articles.map((news, index) => (
-                <div className=' cursor-pointer' key={index} onClick={() => handleNewsClick(news)}>
+                <div
+                  className=" cursor-pointer"
+                  key={index}
+                  onClick={() => handleNewsClick(news)}
+                >
                   <NewsCard news={news} />
                 </div>
               ))}

@@ -24,11 +24,11 @@ const Sidebar = ({ setIsOpen, isOpen, setCategory }) => {
   return (
     <div
       className={`fixed top-0 left-0 h-full bg-gray-800 text-white  flex-shrink-0 transition-all ease-in-out duration-500   z-10 ${
-        isOpen ? ' -translate-x-full w-0 ' : 'translate-x-0 md:w-60 w-72'
+        !isOpen ? ' -translate-x-full w-0 ' : 'translate-x-0 md:w-60 w-72'
       } md:translate-x-0 `}
     >
       <div
-        className={`flex justify-between p-4   ease-in-out duration-100  ${isOpen ? ' -translate-x-[1500%] ' : 'translate-x-0 '}`}
+        className={`flex justify-between p-4   ease-in-out duration-100  ${!isOpen ? ' -translate-x-[1500%] ' : 'translate-x-0 '}`}
       >
         <h2 className="text-2xl font-bold">Categories</h2>
         <button onClick={toggleSidebar} className="text-2xl">
@@ -38,7 +38,7 @@ const Sidebar = ({ setIsOpen, isOpen, setCategory }) => {
 
       <ul
         className={`mt-8 space-y-4 px-4  ease-in-out duration-100 ${
-          isOpen ? ' -translate-x-[1500%] ' : 'translate-x-0 '
+          !isOpen ? ' -translate-x-[1500%] ' : 'translate-x-0 '
         }`}
       >
         {categories.map((category) => (
