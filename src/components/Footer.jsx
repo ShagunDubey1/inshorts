@@ -1,4 +1,3 @@
-
 function Footer() {
   return (
     <footer className="bg-gray-800 text-white py-6">
@@ -12,9 +11,15 @@ function Footer() {
         </div>
 
         <div className="flex space-x-6 text-gray-400">
-          <a href="/contact" className="hover:text-white">Contact Us</a>
-          <a href="/terms" className="hover:text-white">Terms & conditions</a>
-          <a href="/privacy" className="hover:text-white">Privacy Policies</a>
+          <a href="/contact" className="hover:text-white">
+            Contact Us
+          </a>
+          <a href="/terms" className="hover:text-white">
+            Terms & conditions
+          </a>
+          <a href="/privacy" className="hover:text-white">
+            Privacy Policies
+          </a>
         </div>
 
         <div className="flex space-x-4">
