@@ -3,7 +3,6 @@ function Footer() {
     <footer className="bg-gray-800 text-white py-6">
       <div className="container mx-auto flex justify-between items-center p-4 px-8">
         <div className="flex items-center space-x-4">
-          {/* <img src="/path/to/logo.png" alt="inshorts logo" className="h-10" /> */}
           <div>
             <h2 className="font-semibold text-lg">Inshorts Pte. Ltd.</h2>
             <p className="text-gray-400">©COPYRIGHT 2024</p>
