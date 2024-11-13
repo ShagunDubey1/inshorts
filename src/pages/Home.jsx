@@ -1,5 +1,8 @@
+import { useQuery } from "@tanstack/react-query";
 import Header from "../components/Header"
 import NewsCard from "../components/NewsCard"
+import QueryKeys from "../constants/querykeys";
+import getNews from "../services/getNews";
 
 const newsData = [
   {
@@ -25,11 +28,19 @@ const newsData = [
 ];
 
 function Home() {
+
+  const { isLoading, isError, data, refetch } = useQuery({
+    queryKey: [QueryKeys.GET_NEWS],
+    queryFn: () => getNews(),
+  })
+
+  console.log(data?.data?.articles);
+
   return (
     <div className="min-h-screen bg-gray-100">
       <Header />
       <div className="container mx-auto py-8">
-        {newsData.map((news, index) => (
+        {data?.data?.articles.map((news, index) => (
           <NewsCard key={index} news={news} />
         ))}
       </div>
