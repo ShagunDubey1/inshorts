@@ -6,6 +6,7 @@ import getNews from '../services/getNews';
 import Footer from '../components/Footer';
 import Sidebar from '../components/Sidebar';
 import { useEffect, useState } from 'react';
+import { CgCloseR } from 'react-icons/cg';
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,8 +23,12 @@ function Home() {
   }, [category, refetch]);
 
   const handleNewsClick = (news) => {
-    console.log("clicked")
-    setSelectedNews(news); 
+    console.log('clicked');
+    setSelectedNews(news);
+  };
+
+  const handleNewsClosed = () => {
+    setSelectedNews(null);
   };
 
   if (isLoading) return <p>Loading..</p>;
@@ -54,9 +59,16 @@ function Home() {
             {selectedNews && (
               <div className="md:w-1/2 hidden md:block ml-4 py-7">
                 <div className="p-4 py-8 border bg-white shadow-md rounded-lg h-full">
-                  <h2 className="inline-block px-4 py-1 mb-4 text-sm font-semibold text-red-600 border border-red-600 rounded-full bg-red-100">
-                    Preview
-                  </h2>
+                  <div className=" flex w-full justify-between items-center mb-4 ">
+                    <h2 className="inline-block px-4 py-1 text-sm font-semibold text-red-600 border border-red-600 rounded-full bg-red-100">
+                      Preview
+                    </h2>
+
+                    <CgCloseR
+                      onClick={handleNewsClosed}
+                      className=" text-2xl text-gray-600 cursor-pointer hover:text-black hover:shadow-lg"
+                    />
+                  </div>
 
                   <h2 className="text-xl font-bold mb-2">
                     {selectedNews.title}
@@ -70,7 +82,7 @@ function Home() {
                     href={selectedNews.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-500 hover:text-blue-700"
+                    className="text-blue-500 inline-block pb-1 mt-2 text-base border-b border-transparent hover:border-blue-600"
                   >
                     Read full article
                   </a>
