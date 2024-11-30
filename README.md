@@ -13,4 +13,4 @@ Currently, two official plugins are available:
 
 Here's a screen recording of the project in action:
 
-![Screen Recording](./assets/screen-recording.gif)
+![Screen Recording](./assets/recording.mp4)
